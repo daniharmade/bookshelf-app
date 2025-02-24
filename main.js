@@ -13,37 +13,51 @@ function loadBooks() {
 }
 
 function renderBooks(filteredBooks = books) {
-  const incompleteBookList = document.getElementById('incompleteBookList');
-  const completeBookList = document.getElementById('completeBookList');
-  
-  incompleteBookList.innerHTML = '';
-  completeBookList.innerHTML = '';
-  
-  filteredBooks.forEach(book => {
-    const bookElement = document.createElement('div');
-    bookElement.setAttribute('data-bookid', book.id);
-    bookElement.setAttribute('data-testid', 'bookItem');
-    bookElement.innerHTML = 
-      `<h3 data-testid="bookItemTitle">${book.title}</h3>
-       <p data-testid="bookItemAuthor">Penulis: ${book.author}</p>
-       <p data-testid="bookItemYear">Tahun: ${book.year}</p>
-       <div>
-         <button data-testid="bookItemIsCompleteButton" onclick="toggleBookCompletion(${book.id})">
-           ${book.isComplete ? 'Belum selesai dibaca' : 'Selesai dibaca'}
-         </button>
-         <button data-testid="bookItemEditButton" onclick="editBook(${book.id})">Edit Buku</button>
-         <button data-testid="bookItemDeleteButton" onclick="confirmDeleteBook(${book.id})">Hapus Buku</button>
-       </div>`;
+    const incompleteBookList = document.getElementById('incompleteBookList');
+    const completeBookList = document.getElementById('completeBookList');
     
-    if (book.isComplete) {
-      completeBookList.appendChild(bookElement);
-    } else {
-      incompleteBookList.appendChild(bookElement);
-    }
-  });
-}
-
+    incompleteBookList.innerHTML = '';
+    completeBookList.innerHTML = '';
+    
+    const sortedBooks = [...filteredBooks].sort((a, b) => b.id - a.id);
+  
+    sortedBooks.forEach(book => {
+      const bookElement = document.createElement('div');
+      bookElement.setAttribute('data-bookid', book.id);
+      bookElement.setAttribute('data-testid', 'bookItem');
+      bookElement.classList.add('custom-book-item');
+      bookElement.innerHTML = 
+        `<h3 data-testid="bookItemTitle" class="custom-book-title">${book.title}</h3>
+         <p data-testid="bookItemAuthor" class="custom-book-author">Penulis: ${book.author}</p>
+         <p data-testid="bookItemYear" class="custom-book-year">Tahun: ${book.year}</p>
+         <div class="custom-book-actions">
+           <button data-testid="bookItemIsCompleteButton" class="custom-btn" onclick="toggleBookCompletion(${book.id})">
+             ${book.isComplete ? 'Belum selesai dibaca' : 'Selesai dibaca'}
+           </button>
+           <button data-testid="bookItemEditButton" class="custom-btn" onclick="editBook(${book.id})">Edit Buku</button>
+           <button data-testid="bookItemDeleteButton" class="custom-btn custom-btn-delete" onclick="confirmDeleteBook(${book.id})">Hapus Buku</button>
+         </div>`;
+  
+      if (book.isComplete) {
+        completeBookList.appendChild(bookElement);
+      } else {
+        incompleteBookList.appendChild(bookElement);
+      }
+    });
+  }
+  
 function addBook(title, author, year, isComplete) {
+  if (!title || !author || !year) {
+    Swal.fire({
+      title: "Error!",
+      text: "Judul, penulis, dan tahun tidak boleh kosong!",
+      icon: "error",
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "OK"
+    });
+    return;
+  }
+
   const book = {
     id: new Date().getTime(),
     title,

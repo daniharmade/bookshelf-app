@@ -1,19 +1,19 @@
-/* Reset dasar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-  }
-  
-  body {
+}
+
+body {
     background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
     color: #e0e0e0;
     line-height: 1.6;
     padding: 20px;
-  }
-  
-  header {
+    font-family: 'Poppins', sans-serif;
+}
+
+.custom-header {
     background: #ff6f61;
     color: white;
     text-align: center;
@@ -22,82 +22,105 @@
     font-weight: bold;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  main {
+}
+
+.custom-main {
     max-width: 1024px;
     margin: 40px auto;
     padding: 35px;
-    /* background: rgba(255, 255, 255, 0.12); */
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(14px);
-  }
-  
-  section {
+}
+
+.custom-section {
     margin-bottom: 30px;
     padding: 30px;
     background: rgba(255, 255, 255, 0.12);
     border-radius: 15px;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-  }
-  
-  .title {
-    color: #f0f0f0f0;
+}
+
+.custom-title {
+    color: #ffffff;
     border-bottom: 4px solid #ff6f61;
     padding-bottom: 8px;
     margin-bottom: 20px;
-  }
-  
-  form div {
+}
+
+.custom-form-group {
     margin-bottom: 20px;
-  }
-  
-  label {
+}
+
+.judul_buku, .penulis_buku, .tahun_buku, .status_buku {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #f0f0f0f0;
+}
+
+.custom-form-group label {
     font-weight: bold;
     display: block;
     margin-bottom: 8px;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
+}
+
+.custom-input {
     width: 100%;
     padding: 16px;
     border: none;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
-  }
+}
 
-.btn-tambah {
-    background: linear-gradient(135deg, #ff6f61, #e6514c);
-    color: white;
-    padding: 16px 22px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s;
-    width: 100%;
-    font-weight: bold;
-  }
-  
-  button {
+.custom-btn {
     background: #ff6f61;
     color: white;
     padding: 16px 22px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s;
-  }
-  
-  button:hover {
+    transition: transform 0.2s;
+}
+
+.custom-btn-search {
+    background: #ff6f61;
+    color: white;
+    padding: 16px 22px;
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:  transform 0.2s;
+}
+
+.custom-btn-add {
+    background: linear-gradient(135deg, #ff6f61, #e6514c);
+    width: 100%;
+    font-weight: bold;
+}
+
+.custom-btn:hover {
     background: #e6514c;
     transform: scale(1.02);
-  }
-  
-  #incompleteBookList div, #completeBookList div {
+}
+
+.custom-btn-delete {
+    background: #d32f2f;
+}
+
+.custom-btn-delete:hover {
+    background: #b71c1c;
+}
+
+.custom-book-list {
+    margin-top: 20px;
+}
+
+.custom-book-item {
     background: rgba(255, 255, 255, 0.12);
     padding: 25px;
     border-radius: 15px;
@@ -105,18 +128,20 @@
     border-left: 7px solid #ff6f61;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-  }
-  
-  button[data-testid="bookItemDeleteButton"] {
-    background: #d32f2f;    
-  }
-  
-  button[data-testid="bookItemDeleteButton"]:hover {
-    background: #b71c1c;
-  }
-  
-  #searchSubmit {
-    margin-top: 20px;
-    width: 100%;
-    font-weight: bold;
-  }
+}
+
+.custom-book-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.custom-book-author,
+.custom-book-year {
+    margin-bottom: 8px;
+}
+
+.custom-book-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
