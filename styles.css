@@ -1,0 +1,122 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  header {
+    background: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 24px 0;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  main {
+    max-width: 1024px;
+    margin: 40px auto;
+    padding: 35px;
+    /* background: rgba(255, 255, 255, 0.12); */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(14px);
+  }
+  
+  section {
+    margin-bottom: 30px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 15px;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  
+  .title {
+    color: #f0f0f0f0;
+    border-bottom: 4px solid #ff6f61;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+  
+  form div {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+
+.btn-tambah {
+    background: linear-gradient(135deg, #ff6f61, #e6514c);
+    color: white;
+    padding: 16px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  button {
+    background: #ff6f61;
+    color: white;
+    padding: 16px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+  }
+  
+  button:hover {
+    background: #e6514c;
+    transform: scale(1.02);
+  }
+  
+  #incompleteBookList div, #completeBookList div {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border-left: 7px solid #ff6f61;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  
+  button[data-testid="bookItemDeleteButton"] {
+    background: #d32f2f;    
+  }
+  
+  button[data-testid="bookItemDeleteButton"]:hover {
+    background: #b71c1c;
+  }
+  
+  #searchSubmit {
+    margin-top: 20px;
+    width: 100%;
+    font-weight: bold;
+  }
