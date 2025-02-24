@@ -85,16 +85,7 @@ body {
 }
 
 .custom-btn-search {
-    background: #ff6f61;
-    color: white;
-    padding: 16px 22px;
-    border: none;
-    margin-top: 10px;
-    width: 100%;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition:  transform 0.2s;
+    display: none;
 }
 
 .custom-btn-add {
